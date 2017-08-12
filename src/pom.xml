@@ -237,7 +237,7 @@
                                         </limit>
                                     </limits>
                                     <excludes>
-                                        <exclude>com.hands.desafio.UserApplication</exclude>
+                                        <exclude>com.hands.desafio.DeviceApplication</exclude>
                                         <exclude>com.hands.desafio.entity.*</exclude>
                                         <exclude>com.hands.desafio.http.dto.*</exclude>
                                     </excludes>
@@ -259,7 +259,7 @@
                 <configuration>
                     <images>
                         <image>
-                            <name>desafio_cielo</name>
+                            <name>desafio_hands</name>
                             <build>
                                 <dockerFile>Dockerfile</dockerFile>
                                 <assembly>

@@ -15,11 +15,13 @@ SpringFox/Swagger - Documentação da API
 ###Testes
 Jacoco - para testes de cobertura - Relatório gerado em: target/site/jacoco/index.html
 
+Spock - para testes de BDD - Relatório gerado em: target/spock/index.html
+
 JUnit - Teste Unitários
 
 Mockito - Mock
 
-MockMvc - Testes Integrados
+MockMvc - Testes Integrados/Controller
 
 
 ##Arquitetura:

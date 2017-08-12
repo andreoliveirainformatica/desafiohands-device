@@ -11,4 +11,4 @@ springfox:
   documentation:
      swagger:
         v2:
-          path: /handsuser-0.0.1-SNAPSHOT/api-docs
+          path: /handsdevice-0.0.1-SNAPSHOT/api-docs

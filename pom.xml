@@ -4,11 +4,11 @@
     <modelVersion>4.0.0</modelVersion>
 
     <groupId>com.hands.desafio</groupId>
-    <artifactId>handsuser</artifactId>
+    <artifactId>handsdevice</artifactId>
     <version>0.0.1-SNAPSHOT</version>
     <packaging>jar</packaging>
 
-    <name>Hands-User</name>
+    <name>Hands-Device</name>
     <description>Desafio Hands</description>
     <parent>
         <groupId>org.springframework.boot</groupId>
@@ -237,7 +237,7 @@
                                         </limit>
                                     </limits>
                                     <excludes>
-                                        <exclude>com.hands.desafio.UserApplication</exclude>
+                                        <exclude>com.hands.desafio.DeviceApplication</exclude>
                                         <exclude>com.hands.desafio.entity.*</exclude>
                                         <exclude>com.hands.desafio.http.dto.*</exclude>
                                     </excludes>
