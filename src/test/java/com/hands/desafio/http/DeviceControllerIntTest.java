@@ -65,8 +65,9 @@ public class DeviceControllerIntTest {
                 .andExpect(content().contentType(MediaType.APPLICATION_JSON_UTF8_VALUE))
                 .andExpect(jsonPath("$.[*].id").value(hasItem("ca515e36bda92767")))
                 .andExpect(jsonPath("$.[*].userId").value(hasItem("813b190e-09d0-4545-80da-ade4405c8901")))
-                .andExpect(jsonPath("$.[*].systemOS.name").value(hasItem("android")))
-                .andExpect(jsonPath("$.[*].systemOS.version").value(hasItem("6.0")));
+                .andExpect(jsonPath("$.[*].model.name").value(hasItem("Motorola Moto X (2nd Gen)")))
+                .andExpect(jsonPath("$.[*].model.systemOS.name").value(hasItem("android")))
+                .andExpect(jsonPath("$.[*].model.systemOS.version").value(hasItem("6.0")));
     }
 
     private void populateCache() {

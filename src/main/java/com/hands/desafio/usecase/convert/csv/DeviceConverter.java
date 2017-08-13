@@ -21,8 +21,7 @@ public class DeviceConverter implements Converter<String, Device> {
         Device device = new Device();
         device.setId(safeGetString(() -> fields[1]));
         device.setUserId(safeGetString(() -> fields[0]));
-        device.setSystemOS(builderSystemOS(fields));
-        device.setModel(safeGetString(() -> fields[4]));
+        device.setModel(builderModel(fields));
         device.setHome(builderHome(fields));
         device.setWork(builderWork(fields));
         device.setApps(builderApps(fields));
@@ -34,10 +33,10 @@ public class DeviceConverter implements Converter<String, Device> {
         return device;
     }
 
-
-    private SystemOS builderSystemOS(final String[] fields){
-        return new SystemOS(safeGetString(() -> fields[2]),
-                safeGetString(() -> fields[3]));
+    private Model builderModel(final String[] fields) {
+        return new Model(safeGetString(() -> fields[4]),
+                new SystemOS(safeGetString(() -> fields[2]),
+                safeGetString(() -> fields[3])));
     }
 
     private Home builderHome(final String[] fields) {

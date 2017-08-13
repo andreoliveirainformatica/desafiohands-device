@@ -21,13 +21,11 @@ public class DeviceResponse implements Serializable {
     @Indexed
     private String userId;
 
-    private SystemOS systemOS;
+    private Model model;
 
     private Home home;
 
     private Work work;
-
-    private String model;
 
     private Set<String> apps;
 

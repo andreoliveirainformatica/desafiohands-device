@@ -9,7 +9,9 @@ import java.io.Serializable;
 @Getter
 @ToString
 @AllArgsConstructor
-public class GeoLocalization implements Serializable{
+public class Model implements Serializable {
 
-    private double[] coordinate;
+    private String name;
+
+    private SystemOS systemOS;
 }
