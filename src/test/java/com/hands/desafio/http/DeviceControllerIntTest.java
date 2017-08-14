@@ -20,8 +20,7 @@ import org.springframework.test.web.servlet.MockMvc;
 import org.springframework.test.web.servlet.setup.MockMvcBuilders;
 import org.springframework.web.servlet.config.annotation.WebMvcConfigurationSupport;
 
-import static org.hamcrest.Matchers.hasItem;
-import static org.hamcrest.Matchers.hasSize;
+import static org.hamcrest.Matchers.*;
 import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.get;
 import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.*;
 
@@ -63,11 +62,14 @@ public class DeviceControllerIntTest {
                 .andExpect(status().isOk())
                 .andExpect(jsonPath("$", hasSize(1)))
                 .andExpect(content().contentType(MediaType.APPLICATION_JSON_UTF8_VALUE))
-                .andExpect(jsonPath("$.[*].id").value(hasItem("ca515e36bda92767")))
-                .andExpect(jsonPath("$.[*].userId").value(hasItem("813b190e-09d0-4545-80da-ade4405c8901")))
-                .andExpect(jsonPath("$.[*].model.name").value(hasItem("Motorola Moto X (2nd Gen)")))
-                .andExpect(jsonPath("$.[*].model.systemOS.name").value(hasItem("android")))
-                .andExpect(jsonPath("$.[*].model.systemOS.version").value(hasItem("6.0")));
+                .andExpect(jsonPath("$.[0].id").value(is("ca515e36bda92767")))
+                .andExpect(jsonPath("$.[0].userId").value(is("813b190e-09d0-4545-80da-ade4405c8901")))
+                .andExpect(jsonPath("$.[0].model.name").value(is("Motorola Moto X (2nd Gen)")))
+                .andExpect(jsonPath("$.[0].model.systemOS.name").value(is("android")))
+                .andExpect(jsonPath("$.[0].model.systemOS.version").value(is("6.0")))
+                .andExpect(jsonPath("$.[0].home.geoLocalization.coordinate").value(containsInAnyOrder(-46.5933971, -23.5169625)))
+                .andExpect(jsonPath("$.[0].work.geoLocalization.coordinate").value(containsInAnyOrder(-46.6576926, -23.5597101)))
+                .andExpect(jsonPath("$.[0].apps").value(containsInAnyOrder("Facebook")));
     }
 
     private void populateCache() {
